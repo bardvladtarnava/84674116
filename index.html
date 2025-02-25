@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Кнопка на пол экрана со звуком</title>
+<style>
+  #myElement {
+    width: 200px;
+    height: 150px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transition: all 0.5s ease;
+  }
+
+  .half-screen {
+    width: 50vw !important;
+    height: 100vh !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+</style>
+</head>
+<body>
+
+  <button onclick="toggleHalfScreen()">Сделать на пол экрана</button>
+
+  <div id="myElement">
+    Это элемент, который можно развернуть на пол экрана.
+  </div>
+
+  <audio id="clickSound" src="audio.mp3"></audio>
+
+  <script>
+    function toggleHalfScreen() {
+      const element = document.getElementById('myElement');
+      element.classList.toggle('half-screen');
+
+      // Воспроизведение звука при клике
+      const sound = document.getElementById('clickSound');
+      sound.currentTime = 0; // Перемотка звука в начало, чтобы можно было воспроизводить несколько раз подряд
+      sound.play();
+    }
+  </script>
+
+</body>
+</html>
