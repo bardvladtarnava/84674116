@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Прототип</title>
+  <title>Красивая кнопка со звуком</title>
   <style>
     /* Фон всей страницы */
     body {
@@ -11,43 +11,109 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #2980B9, #6DD5FA); /* Более спокойный синий градиент */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт */
+      overflow: hidden; /* Чтобы волны не выходили за пределы body */
     }
-    /* Стиль красивой круглой кнопки с увеличенным размером */
+
+    /* Стили для контейнера кнопок для эффекта волн */
+    .button-container {
+      position: relative; /* Важно для позиционирования волн относительно контейнера */
+      width: 200px; /* Увеличим контейнер, чтобы волны было видно */
+      height: 200px; /* Увеличим контейнер, чтобы волны было видно */
+      border-radius: 50%; /* Чтобы контейнер был круглым */
+      display: flex; /* Для центрирования кнопки внутри контейнера */
+      align-items: center; /* Для центрирования кнопки внутри контейнера */
+      justify-content: center; /* Для центрирования кнопки внутри контейнера */
+      overflow: hidden; /* Обрезаем волны по краям контейнера */
+    }
+
+    /* Стиль красивой круглой кнопки с увеличенным размером и тенями */
     button {
+      position: relative; /* Для позиционирования волн внутри кнопки (хотя теперь волны в контейнере) */
       width: 150px;
       height: 150px;
       border: none;
       border-radius: 50%;
-      background: radial-gradient(circle, #ff7e5f, #feb47b);
+      background: linear-gradient(145deg, #FF70A6, #FF9770); /* Яркий градиент для кнопки */
       color: #fff;
-      font-size: 20px;
+      font-size: 22px; /* Увеличенный размер шрифта */
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow:
+        9px 9px 16px #d1d1d1,
+        -9px -9px 16px #ffffff; /* Более мягкая тень для 3D эффекта */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      outline: none; /* Убираем стандартное выделение при фокусе */
+      z-index: 1; /* Кнопка поверх волн */
     }
+
     button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transform: scale(1.05); /* Небольшое увеличение при наведении */
+      box-shadow:
+        12px 12px 20px #c8c8c8,
+        -12px -12px 20px #ffffff; /* Усиление тени при наведении */
     }
+
     button:active {
-      transform: scale(0.95);
+      transform: scale(0.98); /* Небольшое сжатие при нажатии */
+      box-shadow:
+        6px 6px 10px #b8b8b8,
+        -6px -6px 10px #ffffff; /* Меньшая тень при нажатии */
+    }
+
+    /* Стили для волн */
+    .wave {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4); /* Белые полупрозрачные волны */
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
+      transform: translate(-50%, -50%) scale(0);
+      animation: wave-animation 0.8s ease-out;
+      z-index: 0; /* Волны под кнопкой */
+    }
+
+    @keyframes wave-animation {
+      to {
+        transform: translate(-50%, -50%) scale(5); /* Увеличиваем размер волны, чтобы выходила за контейнер */
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <button onclick="playSound()">Звук</button>
+  <div class="button-container" onclick="playSound(event)">
+    <button>Нажми</button>
+  </div>
 
   <audio id="clickSound" src="audio.mp3"></audio>
 
   <script>
-    function playSound() {
+    function playSound(event) {
+      const container = event.currentTarget; // Теперь контейнер - цель клика
       const sound = document.getElementById('clickSound');
-      sound.volume = 1.0; // Устанавливаем максимальную громкость
-      sound.currentTime = 0; // Перематываем в начало для повторного воспроизведения
+
+      // Воспроизведение звука
+      sound.volume = 1.0;
+      sound.currentTime = 0;
       sound.play();
+
+      // Создание волны в контейнере
+      createWave(container); // Передаем контейнер в функцию createWave
+    }
+
+    function createWave(container) { // Принимаем контейнер как аргумент
+      const wave = document.createElement('span');
+      wave.className = 'wave';
+      wave.style.left = '50%'; // Центр контейнера
+      wave.style.top = '50%';  // Центр контейнера
+      container.appendChild(wave); // Добавляем волну в контейнер
+
+      wave.addEventListener('animationend', function() {
+        wave.remove(); // Удаляем элемент волны после окончания анимации
+      });
     }
   </script>
 
