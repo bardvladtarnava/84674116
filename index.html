@@ -1,44 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<title>Кнопка на пол экрана со звуком</title>
-<style>
-  #myElement {
-    width: 200px;
-    height: 150px;
-    background-color: lightblue;
-    border: 1px solid black;
-    transition: all 0.5s ease;
-  }
-
-  .half-screen {
-    width: 50vw !important;
-    height: 100vh !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Красивая кнопка со звуком</title>
+  <style>
+    /* Фон всей страницы */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      font-family: 'Arial', sans-serif;
+    }
+    /* Стиль красивой круглой кнопки с увеличенным размером */
+    button {
+      width: 150px;
+      height: 150px;
+      border: none;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ff7e5f, #feb47b);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+  </style>
 </head>
 <body>
 
-  <button onclick="toggleHalfScreen()">Сделать на пол экрана</button>
-
-  <div id="myElement">
-    Это элемент, который можно развернуть на пол экрана.
-  </div>
+  <button onclick="playSound()">Звук</button>
 
   <audio id="clickSound" src="audio.mp3"></audio>
 
   <script>
-    function toggleHalfScreen() {
-      const element = document.getElementById('myElement');
-      element.classList.toggle('half-screen');
-
-      // Воспроизведение звука при клике
+    function playSound() {
       const sound = document.getElementById('clickSound');
-      sound.currentTime = 0; // Перемотка звука в начало, чтобы можно было воспроизводить несколько раз подряд
+      sound.volume = 1.0; // Устанавливаем максимальную громкость
+      sound.currentTime = 0; // Перематываем в начало для повторного воспроизведения
       sound.play();
     }
   </script>
