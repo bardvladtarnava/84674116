@@ -22,6 +22,7 @@
             android:src="@drawable/ic_logo_diia" />
 
         <TextView
+            android:id="@+id/app_bar_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -39,123 +40,331 @@
             android:src="@drawable/ic_qr" />
     </LinearLayout>
 
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:paddingBottom="24dp">
+        android:layout_weight="1">
 
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/feed_page"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="24dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/home_panel"
-                android:orientation="vertical"
-                android:paddingStart="22dp"
-                android:paddingTop="26dp"
-                android:paddingEnd="22dp"
-                android:paddingBottom="26dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Привіт 👋"
-                    android:textColor="@color/diia_black"
-                    android:textSize="34sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="GUI-only копія головної вкладки з open-source Diia: без авторизації, API, новин, QR-сканера та backend-логики."
-                    android:textColor="@color/diia_black"
-                    android:textSize="16sp"
-                    android:lineSpacingExtra="3dp" />
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:background="@drawable/feed_action_button"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="18dp"
-                    android:paddingTop="14dp"
-                    android:paddingEnd="18dp"
-                    android:paddingBottom="14dp">
-
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:contentDescription=""
-                        android:importantForAccessibility="no"
-                        android:src="@drawable/ic_qr_white" />
+                    android:background="@drawable/home_panel"
+                    android:orientation="vertical"
+                    android:paddingStart="22dp"
+                    android:paddingTop="26dp"
+                    android:paddingEnd="22dp"
+                    android:paddingBottom="26dp">
 
                     <TextView
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:layout_weight="1"
-                        android:text="Сканувати QR-код"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp"
+                        android:text="Привіт 👋"
+                        android:textColor="@color/diia_black"
+                        android:textSize="34sp"
                         android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:background="@drawable/home_notice"
-                android:orientation="vertical"
-                android:padding="20dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="GUI-only копія головної вкладки з open-source Diia: без авторизації, API, новин, QR-сканера та backend-логіки."
+                        android:textColor="@color/diia_black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/feed_action_button"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="18dp"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="18dp"
+                        android:paddingBottom="14dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:contentDescription=""
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_qr_white" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:text="Сканувати QR-код"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/home_notice"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Незламність"
+                        android:textColor="@color/diia_black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="Мапа Пунктів Незламності та укриттів. Заява про відсутній зв'язок."
+                        android:textColor="@color/diia_black"
+                        android:textSize="15sp" />
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Незламність"
+                    android:layout_marginTop="22dp"
+                    android:text="Статичний макет"
                     android:textColor="@color/diia_black"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Мапа Пунктів Незламності та укриттів. Заява про відсутній зв'язок."
-                    android:textColor="@color/diia_black"
-                    android:textSize="15sp"
-                    android:lineSpacingExtra="3dp" />
+                    android:lineSpacingExtra="3dp"
+                    android:text="На екрані залишена тільки оболонка головної сторінки: app bar Diia, стартова вкладка «Стрічка», offline greeting, QR-кнопка-заглушка та нижня навігація."
+                    android:textColor="@color/diia_text_secondary"
+                    android:textSize="14sp" />
             </LinearLayout>
+        </ScrollView>
 
-            <TextView
+        <ScrollView
+            android:id="@+id/documents_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="24dp"
+            android:visibility="gone">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
-                android:text="Статичний макет"
-                android:textColor="@color/diia_black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="На екрані залишена тільки оболочка головної сторінки: app bar Diia, стартова вкладка «Стрічка», offline greeting, QR-кнопка-заглушка та нижня навігація з чотирма пунктами."
-                android:textColor="@color/diia_text_secondary"
-                android:textSize="14sp"
-                android:lineSpacingExtra="3dp" />
-        </LinearLayout>
-    </ScrollView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="DocGallery GUI-only"
+                    android:textColor="@color/diia_text_secondary"
+                    android:textSize="13sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="430dp"
+                    android:background="@drawable/doc_background"
+                    android:paddingStart="22dp"
+                    android:paddingTop="22dp"
+                    android:paddingEnd="22dp"
+                    android:paddingBottom="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Посвідчення\nводія"
+                                android:textColor="@color/diia_black"
+                                android:textSize="28sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:gravity="center"
+                                android:text="⋯"
+                                android:textColor="@color/diia_black"
+                                android:textSize="28sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Документ оновлено о 12:06 | 22.06.2023 • Документ оновлено о 12:06 | 22.06.2023"
+                            android:textColor="@color/diia_black"
+                            android:textSize="12sp"
+                            android:singleLine="true" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="18dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="104dp"
+                                android:layout_height="140dp"
+                                android:background="@drawable/doc_photo_placeholder"
+                                android:gravity="center"
+                                android:text="Фото"
+                                android:textColor="@color/diia_text_secondary"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="18dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="ІМʼЯ\nПРІЗВИЩЕ"
+                                    android:textColor="@color/diia_black"
+                                    android:textSize="23sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:text="Категорія: B"
+                                    android:textColor="@color/diia_black"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Дата народження:\n24.08.1991"
+                                    android:textColor="@color/diia_black"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Номер:\nXX000000"
+                                    android:textColor="@color/diia_black"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="44dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/doc_chip_selected"
+                                android:gravity="center"
+                                android:text="QR-код"
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="44dp"
+                                android:layout_marginStart="6dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/doc_chip_unselected"
+                                android:gravity="center"
+                                android:text="Штрихкод"
+                                android:textColor="@color/diia_black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/doc_action_pill"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:text="＋  Додати документ"
+                        android:textColor="@color/diia_black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/doc_action_pill"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:text="↕  Змінити порядок документів"
+                        android:textColor="@color/diia_black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Сторінка відтворює тільки візуальну оболонку DocGallery/DocCarousel з GitHub Diia. QR, штрихкод, меню документа, PDF, share та оновлення документів не підключені."
+                    android:textColor="@color/diia_text_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -168,13 +377,17 @@
         android:paddingEnd="6dp">
 
         <LinearLayout
+            android:id="@+id/tab_feed"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/tab_feed_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:contentDescription=""
@@ -182,6 +395,7 @@
                 android:src="@drawable/ic_tab_feed_selected" />
 
             <TextView
+                android:id="@+id/tab_feed_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -191,13 +405,17 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/tab_documents"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/tab_documents_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:contentDescription=""
@@ -205,6 +423,7 @@
                 android:src="@drawable/ic_tab_documents_unselected" />
 
             <TextView
+                android:id="@+id/tab_documents_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
