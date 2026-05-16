@@ -50,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
+            android:visibility="gone"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:paddingBottom="24dp">
@@ -170,8 +171,7 @@
             android:clipToPadding="false"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:paddingBottom="24dp"
-            android:visibility="gone">
+            android:paddingBottom="24dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -182,7 +182,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:text="DocGallery GUI-only"
+                    android:text="DocGallery GUI-only · натисни «Стрічка», щоб повернутися"
                     android:textColor="@color/diia_text_secondary"
                     android:textSize="13sp" />
 

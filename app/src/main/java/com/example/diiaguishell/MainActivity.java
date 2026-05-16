@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.tab_feed).setOnClickListener(view -> showFeedPage());
         findViewById(R.id.tab_documents).setOnClickListener(view -> showDocumentsPage());
 
-        showFeedPage();
+        showDocumentsPage();
     }
 
     private void showFeedPage() {
