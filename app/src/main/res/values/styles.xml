@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.DiiaGuiShell" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/diia_blue</item>
+        <item name="android:navigationBarColor">@color/diia_surface</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

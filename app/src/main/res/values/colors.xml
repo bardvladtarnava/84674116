@@ -1,0 +1,9 @@
+<resources>
+    <color name="diia_blue">#DFF6FF</color>
+    <color name="diia_blue_deep">#8ED6FF</color>
+    <color name="diia_black">#111111</color>
+    <color name="diia_text_secondary">#667085</color>
+    <color name="diia_surface">#FFFFFF</color>
+    <color name="diia_card">#F7FAFC</color>
+    <color name="diia_line">#E6EEF5</color>
+</resources>
