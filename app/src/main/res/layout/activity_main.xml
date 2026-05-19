@@ -5,40 +5,18 @@
     android:background="@drawable/screen_background"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/app_bar_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
         android:paddingStart="24dp"
-        android:paddingTop="16dp"
+        android:paddingTop="20dp"
         android:paddingEnd="24dp"
-        android:paddingBottom="12dp">
-
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:contentDescription="Дія"
-            android:src="@drawable/ic_logo_diia" />
-
-        <TextView
-            android:id="@+id/app_bar_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"
-            android:text="Стрічка"
-            android:textColor="@color/diia_black"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@drawable/qr_button_outline"
-            android:contentDescription="Відсканувати QR-код"
-            android:padding="12dp"
-            android:src="@drawable/ic_qr" />
-    </LinearLayout>
+        android:paddingBottom="12dp"
+        android:text="Стрічка"
+        android:textColor="@color/diia_black"
+        android:textSize="58sp"
+        android:visibility="gone" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -49,118 +27,31 @@
             android:id="@+id/feed_page"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:visibility="gone"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="24dp">
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/home_panel"
-                    android:orientation="vertical"
-                    android:paddingStart="22dp"
-                    android:paddingTop="26dp"
-                    android:paddingEnd="22dp"
-                    android:paddingBottom="26dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="Привіт, Андрій 👋" android:textColor="@color/diia_black" android:textSize="24sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Привіт 👋"
-                        android:textColor="@color/diia_black"
-                        android:textSize="34sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:lineSpacingExtra="3dp"
-                        android:text="GUI-only копія головної вкладки з open-source Diia: без авторизації, API, новин, QR-сканера та backend-логіки."
-                        android:textColor="@color/diia_black"
-                        android:textSize="16sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:background="@drawable/feed_action_button"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingTop="14dp"
-                        android:paddingEnd="18dp"
-                        android:paddingBottom="14dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:src="@drawable/ic_qr_white" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Сканувати QR-код"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:background="@drawable/home_notice" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Незламність" android:textColor="@color/diia_black" android:textSize="22sp" android:textStyle="bold"/>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Мапа укриттів, Пунктів незламності та відділень Power Banking.\nЗаява про відсутній зв'язок." android:textColor="@color/diia_black" android:textSize="14sp"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:background="@drawable/home_notice"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Незламність"
-                        android:textColor="@color/diia_black"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:lineSpacingExtra="3dp"
-                        android:text="Мапа Пунктів Незламності та укриттів. Заява про відсутній зв'язок."
-                        android:textColor="@color/diia_black"
-                        android:textSize="15sp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:gravity="center" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Сканер" android:textSize="14sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Військові\nоблігації" android:textSize="14sp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Відсутній\nзвʼязок" android:textSize="14sp"/>
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="22dp"
-                    android:text="Статичний макет"
-                    android:textColor="@color/diia_black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="3dp"
-                    android:text="На екрані залишена тільки оболонка головної сторінки: app bar Diia, стартова вкладка «Стрічка», offline greeting, QR-кнопка-заглушка та нижня навігація."
-                    android:textColor="@color/diia_text_secondary"
-                    android:textSize="14sp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="140dp" android:layout_marginTop="18dp" android:background="@drawable/card_surface" android:gravity="bottom" android:padding="16dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ЛІНІЯ ДРОНІВ" android:textColor="#FFFFFF" android:textSize="32sp" android:textStyle="bold"/>
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
 
@@ -168,200 +59,41 @@
             android:id="@+id/documents_page"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="24dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:text="DocGallery GUI-only · натисни «Стрічка», щоб повернутися"
-                    android:textColor="@color/diia_text_secondary"
-                    android:textSize="13sp" />
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="430dp"
-                    android:background="@drawable/doc_background"
-                    android:paddingStart="22dp"
-                    android:paddingTop="22dp"
-                    android:paddingEnd="22dp"
-                    android:paddingBottom="22dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Посвідчення\nводія"
-                                android:textColor="@color/diia_black"
-                                android:textSize="28sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="42dp"
-                                android:layout_height="42dp"
-                                android:gravity="center"
-                                android:text="⋯"
-                                android:textColor="@color/diia_black"
-                                android:textSize="28sp" />
+            android:visibility="gone"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="680dp" android:layout_marginTop="22dp" android:background="@drawable/doc_background" android:padding="18dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Паспорт громадянина\nУкраїни" android:textSize="26sp" android:textColor="@color/diia_black"/>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="220dp" android:layout_marginTop="18dp" android:orientation="horizontal">
+                            <TextView android:layout_width="160dp" android:layout_height="match_parent" android:background="@drawable/doc_photo_placeholder" android:gravity="center" android:text="Фото"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="16dp" android:text="Дата\nнародження:\n23.06.2009\n\nНомер:\nХХХХХХ" android:textSize="18sp"/>
                         </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Документ оновлено о 12:06 | 22.06.2023 • Документ оновлено о 12:06 | 22.06.2023"
-                            android:textColor="@color/diia_black"
-                            android:textSize="12sp"
-                            android:singleLine="true" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginTop="18dp"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="104dp"
-                                android:layout_height="140dp"
-                                android:background="@drawable/doc_photo_placeholder"
-                                android:gravity="center"
-                                android:text="Фото"
-                                android:textColor="@color/diia_text_secondary"
-                                android:textSize="15sp" />
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="18dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="ІМʼЯ\nПРІЗВИЩЕ"
-                                    android:textColor="@color/diia_black"
-                                    android:textSize="23sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="12dp"
-                                    android:text="Категорія: B"
-                                    android:textColor="@color/diia_black"
-                                    android:textSize="15sp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
-                                    android:text="Дата народження:\n24.08.1991"
-                                    android:textColor="@color/diia_black"
-                                    android:textSize="15sp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
-                                    android:text="Номер:\nXX000000"
-                                    android:textColor="@color/diia_black"
-                                    android:textSize="15sp" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="44dp"
-                                android:layout_marginEnd="6dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/doc_chip_selected"
-                                android:gravity="center"
-                                android:text="QR-код"
-                                android:textColor="#FFFFFF"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="44dp"
-                                android:layout_marginStart="6dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/doc_chip_unselected"
-                                android:gravity="center"
-                                android:text="Штрихкод"
-                                android:textColor="@color/diia_black"
-                                android:textSize="14sp" />
-                        </LinearLayout>
+                        <TextView android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="10dp" android:background="#9BE49A" android:gravity="center_vertical" android:singleLine="true" android:text="Документ оновлено о 19:45 | 14.05.2026 • Документ оновлено"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Комаровський\nМикита\nОлександрович" android:textSize="22sp"/>
                     </LinearLayout>
                 </FrameLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:background="@drawable/doc_action_pill"
-                        android:gravity="center_vertical"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="20dp"
-                        android:text="＋  Додати документ"
-                        android:textColor="@color/diia_black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/doc_action_pill"
-                        android:gravity="center_vertical"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="20dp"
-                        android:text="↕  Змінити порядок документів"
-                        android:textColor="@color/diia_black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="160dp" android:layout_marginTop="16dp" android:background="@drawable/doc_action_pill" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⊕" android:textSize="48sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Додати документ" android:textSize="20sp"/>
                 </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:lineSpacingExtra="3dp"
-                    android:text="Сторінка відтворює тільки візуальну оболонку DocGallery/DocCarousel з GitHub Diia. QR, штрихкод, меню документа, PDF, share та оновлення документів не підключені."
-                    android:textColor="@color/diia_text_secondary"
-                    android:textSize="14sp" />
+        <ScrollView
+            android:id="@+id/services_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Сервіси" android:textSize="56sp" android:textColor="@color/diia_black"/>
+                <TextView android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="10dp" android:background="@drawable/doc_action_pill" android:gravity="center_vertical" android:paddingStart="16dp" android:text="Пошук" android:textColor="#AAAAAA" android:textSize="22sp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:lineSpacingExtra="16dp" android:text="Допомога армії      Незламність\nДія.Картка          Військові облігації\nЛінія дронів        Національний кешбек\nЧатбот єВорог       єВідновлення\nМіжнародний Реєстр збитків  Ветеранський спорт\nВодієві             Місце проживання\nОпитування          Допомога від держави\nШлюб онлайн         Послуги для ВПО\nПідприємцю          Допомога по безробіттю\nСудові послуги      єОселя\nВиконавчі провадження Довідки та витяги" android:textSize="16sp"/>
             </LinearLayout>
         </ScrollView>
 
@@ -369,549 +101,42 @@
             android:id="@+id/menu_page"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="24dp"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Меню"
-                    android:textColor="@color/diia_black"
-                    android:textSize="34sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Версія Дії: 1.0"
-                    android:textColor="@color/diia_text_secondary"
-                    android:textSize="14sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:background="@drawable/menu_group_surface"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_menu_notifications_action" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Повідомлення"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/menu_group_surface"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_key" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Дія.Підпис"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="68dp"
-                        android:background="@color/diia_line" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_menu_history" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Історія підписань"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/menu_group_surface"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_settings" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Налаштування"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="68dp"
-                        android:background="@color/diia_line" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_doc_refresh" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Оновити застосунок"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="68dp"
-                        android:background="@color/diia_line" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_device" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Підключені пристрої"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/menu_group_surface"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_message" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Служба підтримки"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="68dp"
-                        android:background="@color/diia_line" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_copy" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Копіювати номер пристрою"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="68dp"
-                        android:background="@color/diia_line" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/menu_icon_circle"
-                            android:contentDescription=""
-                            android:importantForAccessibility="no"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_faq" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="14dp"
-                            android:layout_weight="1"
-                            android:text="Питання та відповіді"
-                            android:textColor="@color/diia_black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="@color/diia_text_secondary"
-                            android:textSize="26sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/menu_logout_button"
-                    android:gravity="center"
-                    android:text="Вийти"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center"
-                    android:text="Повідомлення про обробку персональних даних"
-                    android:textColor="@color/diia_black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="24dp"
-                    android:gravity="center"
-                    android:text="GUI-only: меню не відкриває налаштування, підтримку, FAQ, маркет або вихід."
-                    android:textColor="@color/diia_text_secondary"
-                    android:textSize="13sp" />
+            android:visibility="gone"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Меню" android:textSize="56sp"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Версія Дії: 4.32.1.2628" android:textSize="14sp" android:textColor="@color/diia_text_secondary"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:background="@drawable/menu_group_surface" android:padding="20dp" android:text="Повідомлення\n\nДія.Підпис\nІсторія підписань\n\nНалаштування\nОновити застосунок\nПідключені пристрої\n\nСлужба підтримки\nКопіювати номер пристрою\nПитання та відповіді" android:textSize="18sp"/>
             </LinearLayout>
         </ScrollView>
+
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="78dp"
         android:background="@drawable/bottom_bar_diia"
-        android:baselineAligned="false"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="6dp"
-        android:paddingEnd="6dp">
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/tab_feed"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/tab_feed_icon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription=""
-                android:importantForAccessibility="no"
-                android:src="@drawable/ic_tab_feed_selected" />
-
-            <TextView
-                android:id="@+id/tab_feed_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Стрічка"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp" />
+        <LinearLayout android:id="@+id/tab_feed" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <ImageView android:id="@+id/tab_feed_icon" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_tab_feed_selected"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Стрічка" android:textColor="#fff" android:textSize="12sp"/>
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tab_documents"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/tab_documents_icon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription=""
-                android:importantForAccessibility="no"
-                android:src="@drawable/ic_tab_documents_unselected" />
-
-            <TextView
-                android:id="@+id/tab_documents_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Документи"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp" />
+        <LinearLayout android:id="@+id/tab_documents" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <ImageView android:id="@+id/tab_documents_icon" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_tab_documents_unselected"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Документи" android:textColor="#fff" android:textSize="12sp"/>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription=""
-                android:importantForAccessibility="no"
-                android:src="@drawable/ic_tab_services_unselected" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Сервіси"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp" />
+        <LinearLayout android:id="@+id/tab_services" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <ImageView android:id="@+id/tab_services_icon" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_tab_services_unselected"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Сервіси" android:textColor="#fff" android:textSize="12sp"/>
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tab_menu"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/tab_menu_icon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription=""
-                android:importantForAccessibility="no"
-                android:src="@drawable/ic_tab_menu_unselected_badge" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Меню"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp" />
+        <LinearLayout android:id="@+id/tab_menu" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <ImageView android:id="@+id/tab_menu_icon" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_tab_menu_unselected_badge"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Меню" android:textColor="#fff" android:textSize="12sp"/>
         </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>
